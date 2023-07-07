@@ -1,10 +1,11 @@
 const express=require("express");
-const router=express.Router();
+const routerLogin=express.Router();
 
-router.get("/login",(req,res)=>
-{
-    res.send("ok")
+routerLogin.post("/login",(req,res)=>
+{   
+    console.log(req.body)
+    res.send("Login Page")
 }
 );
 
-module.exports=router;
+module.exports=routerLogin;

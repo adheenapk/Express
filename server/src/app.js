@@ -2,22 +2,16 @@ const express=require("express");
 const app=express();
 app.use(express.json());
 
-/*app.get("/",(req,res)=>
+const HomeRoute=require("./routes/home");
+const LoginRoute=require("./routes/login");
+const RegRoute=require("./routes/register");
+
+app.use("/",HomeRoute);
+app.use("/",LoginRoute);
+app.use("/",RegRoute);
+
+app.listen(8007,()=>
 {
-    res.send("ok")
-}
-);
-app.post("/",(req,res)=>
-{
-    console.log(req.body)
-    res.send(req.body)
-}
-);
-*/
-const AuthRoute=require("./routes/auth.js");
-app.use("/",AuthRoute);
-app.listen(7000,()=>
-{
-    console.log("server listening at port 7000")
+    console.log("server listening at port 8007")
 }
 );

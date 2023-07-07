@@ -1,10 +1,11 @@
 const express=require("express");
-const router=express.Router();
+const routerReg=express.Router();
 
-router.get("/register",(req,res)=>
+routerReg.post("/register",(req,res)=>
 {
-    res.send("perect ok")
+    console.log(req.body)
+    res.send("Register Page")
 }
 );
 
-module.exports=router;
+module.exports=routerReg;
